@@ -15,5 +15,16 @@ namespace CapturePortionScreen
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCapture_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SelectArea frm = new SelectArea();
+            frm.ShowDialog();
+        }
     }
 }
