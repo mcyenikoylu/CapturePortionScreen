@@ -48,7 +48,7 @@
             this.btnCaptureThis.Name = "btnCaptureThis";
             this.btnCaptureThis.Size = new System.Drawing.Size(75, 23);
             this.btnCaptureThis.TabIndex = 0;
-            this.btnCaptureThis.Text = "button1";
+            this.btnCaptureThis.Text = "Capture this";
             this.btnCaptureThis.UseVisualStyleBackColor = true;
             this.btnCaptureThis.Click += new System.EventHandler(this.btnCaptureThis_Click);
             // 
@@ -59,6 +59,7 @@
             this.ClientSize = new System.Drawing.Size(290, 268);
             this.Controls.Add(this.panelDrag);
             this.Name = "SelectArea";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SelectArea";
             this.Load += new System.EventHandler(this.SelectArea_Load);
             this.panelDrag.ResumeLayout(false);

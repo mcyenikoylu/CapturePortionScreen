@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Save));
             this.pbCapture = new System.Windows.Forms.PictureBox();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbCapture)).BeginInit();
@@ -35,7 +36,7 @@
             // 
             // pbCapture
             // 
-            this.pbCapture.Location = new System.Drawing.Point(24, 38);
+            this.pbCapture.Location = new System.Drawing.Point(12, 12);
             this.pbCapture.Name = "pbCapture";
             this.pbCapture.Size = new System.Drawing.Size(970, 240);
             this.pbCapture.TabIndex = 0;
@@ -43,21 +44,26 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(350, 315);
+            this.btnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSave.ImageOptions.SvgImage")));
+            this.btnSave.Location = new System.Drawing.Point(879, 258);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(164, 49);
+            this.btnSave.Size = new System.Drawing.Size(103, 41);
             this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "save";
+            this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // Save
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1018, 455);
+            this.ClientSize = new System.Drawing.Size(992, 306);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.pbCapture);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Save";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Save";
             this.Load += new System.EventHandler(this.Save_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbCapture)).EndInit();

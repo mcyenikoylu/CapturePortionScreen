@@ -65,9 +65,17 @@ namespace CapturePortionScreen
 
         private void btnCaptureThis_Click(object sender, EventArgs e)
         {
+            Class1.x = this.Location.X;
+            Class1.y = this.Location.Y;
+            Class1.w = this.Width;
+            Class1.h = this.Height;
+            Class1.s = this.Size;
+
             this.Hide();
-            Save save = new Save(this.Location.X, this.Location.Y, this.Width, this.Height, this.Size);
-            save.Show();
+            //Save save = new Save(this.Location.X, this.Location.Y, this.Width, this.Height, this.Size);
+            //save.Show();
+
+            this.DialogResult = DialogResult.OK;
         }
 
         protected override void WndProc(ref Message message)
