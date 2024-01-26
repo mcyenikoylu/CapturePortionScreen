@@ -28,29 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectArea));
             this.panelDrag = new System.Windows.Forms.Panel();
-            this.btnCaptureThis = new System.Windows.Forms.Button();
+            this.btnCaptureScreen = new DevExpress.XtraEditors.SimpleButton();
             this.panelDrag.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelDrag
             // 
-            this.panelDrag.Controls.Add(this.btnCaptureThis);
+            this.panelDrag.Controls.Add(this.btnCaptureScreen);
             this.panelDrag.Location = new System.Drawing.Point(43, 33);
             this.panelDrag.Name = "panelDrag";
             this.panelDrag.Size = new System.Drawing.Size(202, 199);
             this.panelDrag.TabIndex = 0;
             this.panelDrag.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDrag_MouseDown);
             // 
-            // btnCaptureThis
+            // btnCaptureScreen
             // 
-            this.btnCaptureThis.Location = new System.Drawing.Point(0, 0);
-            this.btnCaptureThis.Name = "btnCaptureThis";
-            this.btnCaptureThis.Size = new System.Drawing.Size(75, 23);
-            this.btnCaptureThis.TabIndex = 0;
-            this.btnCaptureThis.Text = "Capture this";
-            this.btnCaptureThis.UseVisualStyleBackColor = true;
-            this.btnCaptureThis.Click += new System.EventHandler(this.btnCaptureThis_Click);
+            this.btnCaptureScreen.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.btnCaptureScreen.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.btnCaptureScreen.Location = new System.Drawing.Point(0, 0);
+            this.btnCaptureScreen.Name = "btnCaptureScreen";
+            this.btnCaptureScreen.Size = new System.Drawing.Size(148, 48);
+            this.btnCaptureScreen.TabIndex = 1;
+            this.btnCaptureScreen.Text = "Capture this";
+            this.btnCaptureScreen.Click += new System.EventHandler(this.btnCaptureThis_Click);
             // 
             // SelectArea
             // 
@@ -70,6 +72,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panelDrag;
-        private System.Windows.Forms.Button btnCaptureThis;
+        private DevExpress.XtraEditors.SimpleButton btnCaptureScreen;
     }
 }

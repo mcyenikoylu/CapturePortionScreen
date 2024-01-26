@@ -23,9 +23,10 @@ namespace CapturePortionScreen
             this.DoubleBuffered = true;
             this.SetStyle(ControlStyles.ResizeRedraw, true); // this is to avoid visual artifacts
 
-            this.panelDrag.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-    | System.Windows.Forms.AnchorStyles.Left)
-    | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelDrag.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top 
+                                        | System.Windows.Forms.AnchorStyles.Bottom)
+                                        | System.Windows.Forms.AnchorStyles.Left)
+                                        | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDrag.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelDrag.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.panelDrag.Name = "panelDrag";
@@ -58,6 +59,7 @@ namespace CapturePortionScreen
         Rectangle Left { get { return new Rectangle(0, 0, _, this.ClientSize.Height); } }
         Rectangle Bottom { get { return new Rectangle(0, this.ClientSize.Height - _, this.ClientSize.Width, _); } }
         Rectangle Right { get { return new Rectangle(this.ClientSize.Width - _, 0, _, this.ClientSize.Height); } }
+
         Rectangle TopLeft { get { return new Rectangle(0, 0, _, _); } }
         Rectangle TopRight { get { return new Rectangle(this.ClientSize.Width - _, 0, _, _); } }
         Rectangle BottomLeft { get { return new Rectangle(0, this.ClientSize.Height - _, _, _); } }
@@ -65,13 +67,14 @@ namespace CapturePortionScreen
 
         private void btnCaptureThis_Click(object sender, EventArgs e)
         {
+            this.Hide();
+
             Class1.x = this.Location.X;
             Class1.y = this.Location.Y;
             Class1.w = this.Width;
             Class1.h = this.Height;
             Class1.s = this.Size;
 
-            this.Hide();
             //Save save = new Save(this.Location.X, this.Location.Y, this.Width, this.Height, this.Size);
             //save.Show();
 
@@ -118,7 +121,16 @@ namespace CapturePortionScreen
 
         private void SelectArea_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            this.WindowState = FormWindowState.Minimized;
+            delay();
+        }
 
+        private async void delay()
+        {
+            await Task.Delay(1000);
+            this.WindowState = FormWindowState.Normal;
+            Cursor.Current = Cursors.Default;
         }
     }
 }

@@ -34,6 +34,7 @@
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pbCapture = new System.Windows.Forms.PictureBox();
+            this.btnSave = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCapture)).BeginInit();
             this.SuspendLayout();
@@ -43,17 +44,16 @@
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
-            this.btnCapture});
+            this.btnCapture,
+            this.btnSave});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 3;
+            this.ribbonControl1.MaxItemId = 4;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl1.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl1.ShowToolbarCustomizeItem = false;
-            this.ribbonControl1.Size = new System.Drawing.Size(992, 143);
-            this.ribbonControl1.Toolbar.ShowCustomizeItem = false;
+            this.ribbonControl1.Size = new System.Drawing.Size(990, 143);
             // 
             // btnCapture
             // 
@@ -74,6 +74,7 @@
             // 
             this.ribbonPageGroup1.AllowTextClipping = false;
             this.ribbonPageGroup1.ItemLinks.Add(this.btnCapture);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnSave);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
             this.ribbonPageGroup1.Text = "Menu";
@@ -86,11 +87,20 @@
             this.pbCapture.TabIndex = 3;
             this.pbCapture.TabStop = false;
             // 
+            // btnSave
+            // 
+            this.btnSave.Caption = "Save";
+            this.btnSave.Id = 3;
+            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
+            this.btnSave.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.LargeImage")));
+            this.btnSave.Name = "btnSave";
+            this.btnSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSave_ItemClick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(992, 397);
+            this.ClientSize = new System.Drawing.Size(990, 395);
             this.Controls.Add(this.pbCapture);
             this.Controls.Add(this.ribbonControl1);
             this.MaximizeBox = false;
@@ -113,6 +123,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem btnCapture;
         private System.Windows.Forms.PictureBox pbCapture;
+        private DevExpress.XtraBars.BarButtonItem btnSave;
     }
 }
 

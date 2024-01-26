@@ -22,6 +22,8 @@ namespace CapturePortionScreen
         public Form1()
         {
             InitializeComponent();
+
+            this.Height = 220;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -31,12 +33,13 @@ namespace CapturePortionScreen
 
         private void btnCapture_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            this.WindowState = FormWindowState.Minimized;
+            Cursor.Current = Cursors.WaitCursor;
             SelectArea frm = new SelectArea();
             frm.ShowDialog();
-            //this.Hide();
             if (frm.DialogResult == DialogResult.OK)
             {
-                //this.Show();
+                this.WindowState = FormWindowState.Normal;
                 Rectangle rect = new Rectangle(Class1.x, Class1.y, Class1.w, Class1.h);
                 bmp = new Bitmap(rect.Width, rect.Height, PixelFormat.Format32bppArgb);
                 Graphics g = Graphics.FromImage(bmp);
@@ -46,6 +49,18 @@ namespace CapturePortionScreen
                 {
                     pbCapture.Image = bmp;
                 }));
+            }
+        }
+
+        private void btnSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.CheckPathExists = true;
+            sfd.FileName = "Capture_"+DateTime.Now.ToShortDateString();
+            sfd.Filter = "PNG Image(*.png)|*.png|JPG Image(*.jpg)|*.jpg|BMP Image(*.bmp)|*.bmp";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                pbCapture.Image.Save(sfd.FileName);
             }
         }
     }
