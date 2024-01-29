@@ -67,18 +67,25 @@ namespace CapturePortionScreen
 
         private void btnCaptureThis_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            try
+            {
+                this.Hide();
 
-            Class1.x = this.Location.X;
-            Class1.y = this.Location.Y;
-            Class1.w = this.Width;
-            Class1.h = this.Height;
-            Class1.s = this.Size;
+                Class1.x = this.Location.X;
+                Class1.y = this.Location.Y;
+                Class1.w = this.Width;
+                Class1.h = this.Height;
+                Class1.s = this.Size;
 
-            //Save save = new Save(this.Location.X, this.Location.Y, this.Width, this.Height, this.Size);
-            //save.Show();
+                //Save save = new Save(this.Location.X, this.Location.Y, this.Width, this.Height, this.Size);
+                //save.Show();
 
-            this.DialogResult = DialogResult.OK;
+                this.DialogResult = DialogResult.OK;
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Error Message: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         protected override void WndProc(ref Message message)
@@ -121,16 +128,30 @@ namespace CapturePortionScreen
 
         private void SelectArea_Load(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            this.WindowState = FormWindowState.Minimized;
-            delay();
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                //this.WindowState = FormWindowState.Minimized;
+                delay();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Error Message: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private async void delay()
         {
-            await Task.Delay(1000);
-            this.WindowState = FormWindowState.Normal;
-            Cursor.Current = Cursors.Default;
+            try
+            {
+                await Task.Delay(1000);
+                this.WindowState = FormWindowState.Normal;
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Error Message: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

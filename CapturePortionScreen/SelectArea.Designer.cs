@@ -37,16 +37,16 @@
             // panelDrag
             // 
             this.panelDrag.Controls.Add(this.btnCaptureScreen);
-            this.panelDrag.Location = new System.Drawing.Point(43, 33);
+            this.panelDrag.Location = new System.Drawing.Point(12, 12);
             this.panelDrag.Name = "panelDrag";
-            this.panelDrag.Size = new System.Drawing.Size(202, 199);
+            this.panelDrag.Size = new System.Drawing.Size(202, 55);
             this.panelDrag.TabIndex = 0;
             this.panelDrag.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDrag_MouseDown);
             // 
             // btnCaptureScreen
             // 
             this.btnCaptureScreen.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.btnCaptureScreen.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.btnCaptureScreen.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnCaptureScreen.ImageOptions.SvgImage")));
             this.btnCaptureScreen.Location = new System.Drawing.Point(0, 0);
             this.btnCaptureScreen.Name = "btnCaptureScreen";
             this.btnCaptureScreen.Size = new System.Drawing.Size(148, 48);
@@ -58,8 +58,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(290, 268);
+            this.ClientSize = new System.Drawing.Size(225, 77);
             this.Controls.Add(this.panelDrag);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SelectArea";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SelectArea";
